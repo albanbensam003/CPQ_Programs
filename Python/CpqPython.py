@@ -36,3 +36,15 @@ for data in employee_records:
     get_table_update.AddRow(data)
 
 SqlHelper.Upsert(get_table_update)
+
+#Delete cstome table records
+fetch_data = SqlHelper.GetList("select CpqTableEntryId from CT_Employee")
+
+get_table_del = SqlHelper.GetTable("CT_Employee")
+
+for data in fetch_data:
+    get_table_del.AddRow(data)
+
+SqlHelper.Delete(get_table_del)
+
+

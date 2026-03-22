@@ -1,0 +1,232 @@
+Setup Home
+
+Product Catalog
+    - Products
+    - Categories
+    - Attributes
+    - Attribute Visiblity Restriction
+    - Unit of Measurement
+    - Product Types
+    - Custome Tables
+    - Sequences
+    - SEQ Substitution
+    - Guided Selling
+    - Set Favourite Permission
+    - Product Comparion
+    - Tabs
+
+Pricing/Calculations
+    - Pricebooks
+    - Markets
+    - Market Visiblity
+    - Currencies
+    - Discounts
+    - Rounding Setup
+    - Discounting priorities
+    - Sales Tax
+    - MArgin Health
+    - Promotion
+
+Quotes
+    - Fields, Calculation, Layout
+    - Document Generation Template
+    - Custom Quote Tabs
+    - Quote Tables
+    - Quote Fields
+    - Quote Tab Permission
+    - Quote List settings
+    - Bulf Quote Deletion
+    - Quote Visiblity
+    - Quote Acceptance settings
+    - Partner Function
+
+Users
+    - Users
+    - User Types
+    - Permission Groups
+    - User Custom Fields
+    - Companies
+    - Guset User and Default User settings
+
+UI Design
+    - Branding
+    - Catalog Layout
+    - Top Menu
+    - Products to Products Details Template Mappings
+    - Responsive Template
+
+Workflow/ Approval
+    - Statuses
+    - Actions
+    - Workflow
+    - Workflow Permission
+    - Required Fields by Workflow Actions
+    - Items Actions
+    - Item Actions Workflow
+    - Email Lists
+    - Notification
+    - Approval Rules
+    - Approval Branch
+    - Approval Auto Reminder
+    - Likelihood of Approval
+    - Reassign Rights
+
+CRM Integration
+    - Custom Fields Mappings
+    - Partner Function Mappings
+    - Opportunity Status
+    - Price Book market Mappings
+    - User Mappings
+    - CRM Adminstrator Account
+    - General
+
+Providers
+    - SAP Integration
+    - Third party Integration
+    - Federation settings
+    - SAML Profiles
+    - Suscription of Events
+
+Develop
+    - Global Script
+
+General
+    - Application parameters
+    - Deploy /  Send Changes
+    - Report Module
+    - Countries/Region
+    - States
+    - Territories
+    - Dictionaries
+    - Manage Generated Documents
+    - File Management
+    - Email settings
+
+Import/Export
+    - Bulk Product Import/Export
+    - Bulk User Import/Export
+    - Bulk Pricebook Import/Export
+    - Bulk Product Translation Import/Export
+    - Bulk Business Partner Import/Export
+    - Attribute Import
+    - Attribute Translations Export/Import
+    - Companies Export/Import
+
+Delegation of Authority
+    - User Management
+    - Bulk Quote Reassignment
+    - Ability to Manage Documents
+
+Security
+    - DKIM Keys
+    - Data Deletion
+    - View/Export PII
+    - Personal Data Log
+    - Certificate Management
+    - WSDL Management
+    - Credential Management
+    - Trusted Applications  
+    - Password Policy
+
+Developer Tools
+    - Log
+    - Script Performance
+    - SAP Variant Configuration and Pricing Log
+    - Knowledge Base Diagnostics
+
+Audit Trail
+    - Audit Trail
+    - Change Set
+
+
+What is product in SAP CPQ?
+
+Product is an sellable items in SAP CPQ terms. 
+
+Product in CPQ consist of Part Number, Categories, Product Type, Attribute and Price
+
+What are type of products in SAP CPQ?
+
+Simple product - There is no configuration. Directly add this products in catalog page to Cart items.
+
+Sequence of Events for Simple Product:
+
+1. OnQuoteCreated
+2. OnProductRuleExecutionStart
+3. OnProductRuleExecutionEnd
+4. OnProductLoaded
+5. OnProductReady
+6. OnProductBeforeAddToQuote
+7. BeforeItemAdded
+8. OnItemAdded
+9. BeforeQuoteRendering
+
+Configurable products - Configurable product contains attribute and dynamic pricing.
+
+    Example : I want to purchase Laptop.
+
+    I have choose Dell, Need a 8 GB RAM -> $500
+
+    Based on specification this price is different
+
+    Sequence of Events for Configurable Product:
+
+    1. OnProductRuleExecutionStart
+    2. OnProductRuleExecutionEnd
+    3. OnProductLoaded
+    4. OnProductReady
+    5. (Per attribute selection):
+        OnProductRuleExecutionStart
+        OnProductRuleExecutionEnd
+    6. OnQuoteCreated (if quote does not already exist)
+    7. OnProductBeforeAddToQuote
+    8. Depending on operation:
+    For new root item:
+        BeforeItemAdded
+        AfterItemAdded.
+    For updating existing product:
+        BeforeItemUpdated
+        AfterItemUpdated.
+    9. BeforeQuoteRendering
+
+Collection of Configurable product - User configures all products in one place
+    Example : 
+        * Bundle Products (Parent Product)
+        * Laptop (Child Product), Monitor (Child Product) & Keyboard (Child Product)
+
+
+System (List) of Configurable Product - 
+
+Parent/Child List of Configurable Product - Parent-Child product may include containers which hold Simple or Configurable products.
+    Sequence of Events for Parent-Child Product:
+
+        1. OnProductRuleExecutionStart
+        2. OnProductRuleExecutionEnd
+        3. OnProductLoaded
+        4. OnProductReady
+        5. (Per attribute selection, parent):
+            OnProductRuleExecutionStart
+            OnProductRuleExecutionEnd
+        6. (Per container row management):
+            OnContainerRowAdded
+            OnContainerRowCopied
+            OnContainerRowDeleted
+            OnContainerCellChanged
+            OnProductRuleExecutionStart
+            OnProductRuleExecutionEnd
+        7. (Per attribute selection, child):
+            OnProductRuleExecutionStart
+            OnProductRuleExecutionEnd
+        8. (On saving container row)
+            OnProductRuleExecutionStart
+            OnProductRuleExecutionEnd
+        9. OnQuoteCreated (if quote does not already exist)
+        10. OnProductBeforeAddToQuote
+        11. Depending on operation:
+            For new root item:
+                BeforeItemAdded
+                AfterItemAdded
+            For updating existing product:
+                BeforeItemUpdated
+                AfterItemUpdated
+        12. BeforeQuoteRendering
