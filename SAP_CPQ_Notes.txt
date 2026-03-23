@@ -194,7 +194,6 @@ Collection of Configurable product - User configures all products in one place
         * Bundle Products (Parent Product)
         * Laptop (Child Product), Monitor (Child Product) & Keyboard (Child Product)
 
-
 System (List) of Configurable Product - 
 
 Parent/Child List of Configurable Product - Parent-Child product may include containers which hold Simple or Configurable products.
