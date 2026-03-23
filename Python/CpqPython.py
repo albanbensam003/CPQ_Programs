@@ -48,3 +48,45 @@ for data in fetch_data:
 SqlHelper.Delete(get_table_del)
 
 
+#Insert Container Data
+
+get_cont_data = Product.GetContainerByName('Container_Name')
+
+custom_table_records = {}
+
+for data in custom_table_records:
+    row_insert = get_cont_data.AddNewRow(True)
+    row_insert['Emp_Name'] = data['Emp_Name']
+    row_insert.Calculate()
+get_cont_data.ApplyProductChanges()
+
+# Get Container Records
+
+get_cont_data = Product.GetContainerByName('COntain_Name').Rows
+
+#Set Dropdown Values
+Product.Attr('DropDown_Attr_Name').SelectValues('HardWare')
+
+#Get Attribute Values
+Product.Attr('AttriBute_Name').GetValue()
+
+#Assign Text box Field Value
+Product.Attr("Attribute_Name").AssignValue()
+
+#Get Custom Field Value
+context.Quote.GetCustomField('CustomField').Value
+
+#Get Quote AutoComplete Value
+context.Quote.GetCustomField('AutoCompleteValue').AttributeValue
+
+#Set CustomField Value
+context.Quote.GetCustomField('CF_Account_Country').Value = 'Test'
+
+#Assign AutoComplete Value
+Product.Attr('AutoCompleteValue').SelectDisplayValue("Values")
+Product.Attr('AutoCompleteValue').AssignValue('Values')
+
+#Show and Hide Attr Values in DropDown
+Product.SelectAttrValues('SFDC_Sub_Solution_CAT_Family', list())
+Product.DisallowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
+Product.AllowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
