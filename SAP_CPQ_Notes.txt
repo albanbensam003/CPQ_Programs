@@ -230,3 +230,29 @@ Parent/Child List of Configurable Product - Parent-Child product may include con
                 BeforeItemUpdated
                 AfterItemUpdated
         12. BeforeQuoteRendering
+
+Tell me about pricing in SAP CPQ
+
+Each products can hold pricing value. It is configured in product pricing tab
+
+Three Type of Pricing follows in SAP CPQ
+
+1. Variant Pricing 2. Custom Pricing 3. Pricebook lookup
+
+1. Variant Pricing - Pricing is set from different SAP System like S4HANA/SAP ERP based on Customer needs
+2. Custom Pricing  - Directly added price in products pricing tab and that price will be showing in cart page
+3. Pricebook lookup - It is set price based on Price books , This Price books consist of Market setup (US, Europe)
+                        Also Inside Pricebook setup partnumber, price code, Price , Cost, Recurring Price and Recurring Cost
+
+Discounting priorities
+
+SAP CPQ, discount to customers can be provided in Quote based on User, User Type, Product, Product Type or Product Category conditions.
+
+Discount works based on ranking like User, User Type if we set 1 and 2 rank discount max amount or max percentage applied in cart page
+
+Sales Tax
+
+
+
+
+
