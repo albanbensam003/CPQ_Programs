@@ -1,257 +1,160 @@
-Setup Home
+1. Setup Home (id: 0.3)
 
-Product Catalog
-    - Products
-    - Categories
-    - Attributes
-    - Attribute Visiblity Restriction
-    - Unit of Measurement
-    - Product Types
-    - Custome Tables
-    - Sequences
-    - SEQ Substitution
-    - Guided Selling
-    - Set Favourite Permission
-    - Product Comparion
-    - Tabs
+2. Product Catalog (id: 1)
 
-Pricing/Calculations
-    - Pricebooks
-    - Markets
-    - Market Visiblity
-    - Currencies
-    - Discounts
-    - Rounding Setup
-    - Discounting priorities
-    - Sales Tax
-    - MArgin Health
-    - Promotion
-
-Quotes
-    - Fields, Calculation, Layout
-    - Document Generation Template
-    - Custom Quote Tabs
-    - Quote Tables
-    - Quote Fields
-    - Quote Tab Permission
-    - Quote List settings
-    - Bulf Quote Deletion
-    - Quote Visiblity
-    - Quote Acceptance settings
-    - Partner Function
-
-Users
-    - Users
-    - User Types
-    - Permission Groups
-    - User Custom Fields
-    - Companies
-    - Guset User and Default User settings
-
-UI Design
-    - Branding
-    - Catalog Layout
-    - Top Menu
-    - Products to Products Details Template Mappings
-    - Responsive Template
-
-Workflow/ Approval
-    - Statuses
-    - Actions
-    - Workflow
-    - Workflow Permission
-    - Required Fields by Workflow Actions
-    - Items Actions
-    - Item Actions Workflow
-    - Email Lists
-    - Notification
-    - Approval Rules
-    - Approval Branch
-    - Approval Auto Reminder
-    - Likelihood of Approval
-    - Reassign Rights
-
-CRM Integration
-    - Custom Fields Mappings
-    - Partner Function Mappings
-    - Opportunity Status
-    - Price Book market Mappings
-    - User Mappings
-    - CRM Adminstrator Account
-    - General
-
-Providers
-    - SAP Integration
-    - Third party Integration
-    - Federation settings
-    - SAML Profiles
-    - Suscription of Events
-
-Develop
-    - Global Script
-
-General
-    - Application parameters
-    - Deploy /  Send Changes
-    - Report Module
-    - Countries/Region
-    - States
-    - Territories
-    - Dictionaries
-    - Manage Generated Documents
-    - File Management
-    - Email settings
-
-Import/Export
-    - Bulk Product Import/Export
-    - Bulk User Import/Export
-    - Bulk Pricebook Import/Export
-    - Bulk Product Translation Import/Export
-    - Bulk Business Partner Import/Export
-    - Attribute Import
-    - Attribute Translations Export/Import
-    - Companies Export/Import
-
-Delegation of Authority
-    - User Management
-    - Bulk Quote Reassignment
-    - Ability to Manage Documents
-
-Security
-    - DKIM Keys
-    - Data Deletion
-    - View/Export PII
-    - Personal Data Log
-    - Certificate Management
-    - WSDL Management
-    - Credential Management
-    - Trusted Applications  
-    - Password Policy
-
-Developer Tools
-    - Log
-    - Script Performance
-    - SAP Variant Configuration and Pricing Log
-    - Knowledge Base Diagnostics
-
-Audit Trail
-    - Audit Trail
-    - Change Set
+2.1 Products (id: 1.1111)
+2.2 Categories (id: 1.1)
+2.3 Attributes (id: 1.7)
+2.4 Attribute Visibility Restrictions (id: 1.4)
+2.5 Unit of Measurement (id: 1.18)
+2.6 Product Types (id: 1.6)
+2.7 Custom Tables (id: 1.9.05)
+2.8 Sequences (id: 1.9.1)
+2.9 SEQ Substitution (id: 1.9.2)
+2.10 Guided Selling (id: 1.16.1)
+2.11 Set Favorites Permissions (id: 1.14)
+2.12 Product Comparison (id: 1.15)
+2.13 Tabs (id: 1.16)
 
 
-What is product in SAP CPQ?
+3. Pricing/Calculations (id: 5)
 
-Product is an sellable items in SAP CPQ terms. 
+3.1 Pricebooks (id: 5.15)
+3.2 Markets (id: 5.2.2)
+3.3 Market Visibility (id: 5.31)
+3.4 Currencies (id: 5.1.1)
+3.5 Discounts (id: 5.6)
+3.6 Rounding Setup (id: 5.5.2)
+3.7 Discounting Priorities (id: 5.7)
+3.8 Sales Tax (id: 5.10.1)
+3.9 Margin Health (id: 5.121)
+3.10 Promotions (id: 5.14.1)
 
-Product in CPQ consist of Part Number, Categories, Product Type, Attribute and Price
+4. Quotes (id: 3)
 
-What are type of products in SAP CPQ?
+4.1 Fields, Calculations, Layout (id: 3.11)
+4.2 Document Generation Templates (id: 3.35) [active]
+4.3 Custom Quote Tabs (id: 3.1.3)
+4.4 Quote Tables (id: 3.1.2)
+4.5 Quote Fields (id: 3.26)
+4.6 Quote Tab Permissions (id: 3.1.1)
+4.7 Quote List Settings (id: 3.51)
+4.8 Bulk Quote Deletion (id: 3.75)
+4.9 Quote Visibility (id: 3.85)
+4.10 Quote Acceptance Settings (id: 3.9.3)
+4.11 Partner Functions (id: 3.12)
 
-Simple product - There is no configuration. Directly add this products in catalog page to Cart items.
+5. Business Partners (id: 24)
 
-Sequence of Events for Simple Product:
+5.1 Business Partners (id: 24.1)
+5.2 Business Partner Fields (id: 24.2)
+5.3 Business Partner Permissions (id: 24.3)
+5.4 Business Partner Relationships (id: 24.4)
 
-1. OnQuoteCreated
-2. OnProductRuleExecutionStart
-3. OnProductRuleExecutionEnd
-4. OnProductLoaded
-5. OnProductReady
-6. OnProductBeforeAddToQuote
-7. BeforeItemAdded
-8. OnItemAdded
-9. BeforeQuoteRendering
+6. Users (id: 2)
 
-Configurable products - Configurable product contains attribute and dynamic pricing.
+6.1 Users (id: 2.4)
+6.2 User Types (id: 2.1)
+6.3 Permission Groups (id: 2.8)
+6.4 User Custom Fields (id: 2.5)
+6.5 Companies (id: 2.3)
+6.6 Guest User and Default User Settings (id: 2.7)
 
-    Example : I want to purchase Laptop.
+7. UI Design (id: 8)
 
-    I have choose Dell, Need a 8 GB RAM -> $500
+7.1 Branding (id: 8.1)
+7.2 Catalog Layout (id: 8.6)
+7.3 Top Menu (id: 8.7)
+7.4 Products to Product Details Templates Mappings (id: 8.5)
+7.5 Responsive Templates (id: 8.9)
 
-    Based on specification this price is different
+8. Workflow/Approval (id: 4)
 
-    Sequence of Events for Configurable Product:
+8.1 Statuses (id: 4.1)
+8.2 Actions (id: 4.2)
+8.3 Workflow (id: 4.3)
+8.4 Workflow Permissions (id: 4.4)
+8.5 Required Fields by Workflow Action (id: 4.5)
+8.6 Item Actions (id: 4.61)
+8.7 Item Actions Workflow (id: 4.7)
+8.8 Email Lists (id: 4.8)
+8.9 Notifications (id: 4.9)
+8.10 Approval Rules (id: 4.10)
+8.11 Approval Branch (id: 4.13)
+8.12 Approval Auto-Reminder (id: 4.101)
+8.13 Likelihood of approval (id: 4.11)
+8.14 Reassign Rights (id: 4.12)
 
-    1. OnProductRuleExecutionStart
-    2. OnProductRuleExecutionEnd
-    3. OnProductLoaded
-    4. OnProductReady
-    5. (Per attribute selection):
-        OnProductRuleExecutionStart
-        OnProductRuleExecutionEnd
-    6. OnQuoteCreated (if quote does not already exist)
-    7. OnProductBeforeAddToQuote
-    8. Depending on operation:
-    For new root item:
-        BeforeItemAdded
-        AfterItemAdded.
-    For updating existing product:
-        BeforeItemUpdated
-        AfterItemUpdated.
-    9. BeforeQuoteRendering
+9. CRM Integration (id: 6)
 
-Collection of Configurable product - User configures all products in one place
-    Example : 
-        * Bundle Products (Parent Product)
-        * Laptop (Child Product), Monitor (Child Product) & Keyboard (Child Product)
+9.1 Custom Fields Mappings (id: 6.1)
+9.2 Partner Functions Mapping (id: 6.2)
+9.3 Opportunity Status (id: 6.3)
+9.4 Price Book Market Mappings (id: 6.5)
+9.5 User Mappings (id: 6.6)
+9.6 CRM Administrator Account (id: 6.7)
+9.7 General (id: 6.9)
 
-System (List) of Configurable Product - 
+10. Providers (id: 16)
 
-Parent/Child List of Configurable Product - Parent-Child product may include containers which hold Simple or Configurable products.
-    Sequence of Events for Parent-Child Product:
+10.1 SAP Integrations (id: 16.1)
+10.2 Third-Party Integrations (id: 16.2)
+10.3 Federation Settings (id: 16.3)
+10.4 SAML Profiles (id: 16.4)
+10.5 Subscription to Events (id: 16.5)
 
-        1. OnProductRuleExecutionStart
-        2. OnProductRuleExecutionEnd
-        3. OnProductLoaded
-        4. OnProductReady
-        5. (Per attribute selection, parent):
-            OnProductRuleExecutionStart
-            OnProductRuleExecutionEnd
-        6. (Per container row management):
-            OnContainerRowAdded
-            OnContainerRowCopied
-            OnContainerRowDeleted
-            OnContainerCellChanged
-            OnProductRuleExecutionStart
-            OnProductRuleExecutionEnd
-        7. (Per attribute selection, child):
-            OnProductRuleExecutionStart
-            OnProductRuleExecutionEnd
-        8. (On saving container row)
-            OnProductRuleExecutionStart
-            OnProductRuleExecutionEnd
-        9. OnQuoteCreated (if quote does not already exist)
-        10. OnProductBeforeAddToQuote
-        11. Depending on operation:
-            For new root item:
-                BeforeItemAdded
-                AfterItemAdded
-            For updating existing product:
-                BeforeItemUpdated
-                AfterItemUpdated
-        12. BeforeQuoteRendering
+11. Develop (id: 15)
 
-Tell me about pricing in SAP CPQ
+11.1 Global Scripts (id: 15.1)
 
-Each products can hold pricing value. It is configured in product pricing tab
+12. General (id: 9)
 
-Three Type of Pricing follows in SAP CPQ
+12.1 Application Parameters (id: 9.1)
+12.2 Deploy / Send Changes (id: 9.11)
+12.3 Report Module (id: 9.15)
+12.4 Countries/Regions (id: 9.2)
+12.5 States (id: 9.3)
+12.6 Territories (id: 9.4.4)
+12.7 Dictionaries (id: 9.6)
+12.8 Manage Generated Documents (id: 9.7)
+12.9 File Management (id: 9.9)
+12.10 Email Settings (id: 9.10)
 
-1. Variant Pricing 2. Custom Pricing 3. Pricebook lookup
+13. Import/Export (id: 17)
 
-1. Variant Pricing - Pricing is set from different SAP System like S4HANA/SAP ERP based on Customer needs
-2. Custom Pricing  - Directly added price in products pricing tab and that price will be showing in cart page
-3. Pricebook lookup - It is set price based on Price books , This Price books consist of Market setup (US, Europe)
-                        Also Inside Pricebook setup partnumber, price code, Price , Cost, Recurring Price and Recurring Cost
+13.1 Bulk Product Import/Export (id: 17.10)
+13.2 Bulk User Import/Export (id: 17.11)
+13.3 Bulk Pricebook Import/Export (id: 17.12)
+13.4 Bulk Product Translation Import/Export (id: 17.3.1)
+13.5 Bulk Business Partner Import/Export (id: 17.9)
+13.6 Attribute Import (id: 17.4)
+13.7 Attribute Translations Export/Import (id: 17.5)
+13.8 Companies Export/Import (id: 17.8)
 
-Discounting priorities
+14. Delegation of Authority (id: 18)
 
-SAP CPQ, discount to customers can be provided in Quote based on User, User Type, Product, Product Type or Product Category conditions.
+14.1 User Management (id: 18.4)
+14.2 Bulk Quote Reassignment (id: 18.5)
+14.3 Ability to Manage Documents (id: 18.6)
 
-Discount works based on ranking like User, User Type if we set 1 and 2 rank discount max amount or max percentage applied in cart page
+15. Security (id: 21)
 
-Sales Tax
+15.1 DKIM Keys (id: 21.1)
+15.2 Data Deletion (id: 21.2)
+15.3 View/Export PII (id: 21.3)
+15.4 Personal Data Log (id: 21.4)
+15.5 Certificate Management (id: 21.6)
+15.6 WSDL Management (id: 21.7)
+15.7 Credential Management (id: 21.9)
+15.8 Trusted Applications (id: 21.10)
+15.9 Password Policy (id: 21.12)
 
+16. Developer Tools (id: 23)
 
+16.1 Log (id: 23.41)
+16.2 Script Performance (id: 23.8)
 
+17. Audit Trail (id: 22)
 
-
+17.1 Audit Trail (id: 22.1)
+17.2 Change Set (id: 22.2)

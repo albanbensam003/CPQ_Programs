@@ -61,7 +61,6 @@ for data in custom_table_records:
 get_cont_data.ApplyProductChanges()
 
 # Get Container Records
-
 get_cont_data = Product.GetContainerByName('COntain_Name').Rows
 
 #Set Dropdown Values
@@ -90,3 +89,4 @@ Product.Attr('AutoCompleteValue').AssignValue('Values')
 Product.SelectAttrValues('SFDC_Sub_Solution_CAT_Family', list())
 Product.DisallowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
 Product.AllowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
+
