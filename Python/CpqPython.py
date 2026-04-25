@@ -90,3 +90,9 @@ Product.Attr('AutoCompleteValue').AssignValue('Values')
 Product.SelectAttrValues('SFDC_Sub_Solution_CAT_Family', list())
 Product.DisallowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
 Product.AllowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
+
+
+#Count Of SAP CPQ Tables
+data_insert = context.Quote.QuoteTables['Quote_Details']
+data_insert.AddNewRow()
+Trace.Write(data_insert.Rows.Count)
