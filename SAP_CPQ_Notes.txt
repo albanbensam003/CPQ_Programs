@@ -158,3 +158,13 @@
 
 17.1 Audit Trail (id: 22.1)
 17.2 Change Set (id: 22.2)
+
+
+# Quote Custom Fields Events
+1. Once, when Quote is created
+2. After adding products to Quote
+3. After copying products in Quote
+4. After deleting products from Quote
+5. After changing the value of custom fields
+6. On Involved Parties Changed
+7. After updating products in Quote
