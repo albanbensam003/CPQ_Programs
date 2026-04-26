@@ -90,3 +90,30 @@ Product.SelectAttrValues('SFDC_Sub_Solution_CAT_Family', list())
 Product.DisallowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
 Product.AllowAttrValues('SFDC_Sub_Solution_CAT_Family',tuple())
 
+#Count Of SAP CPQ Tables
+data_insert = context.Quote.QuoteTables['Quote_Details']
+data_insert.AddNewRow()
+Trace.Write(data_insert.Rows.Count)
+
+#Get All sys_table in SAP CPQ
+show_all_table = SqlHelper.GetList("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES where table_name like '%sys_%'")
+
+for data in show_all_table:
+    Trace.Write(data.TABLE_NAME)
+
+
+#Get Overall table count
+get_show_tables = SqlHelper.GetFirst("SELECT count(table_name) as tbl_name from information_schema.tables")
+Trace.Write(get_show_tables.tbl_name)
+
+#Fetch 1000 to 2000 inbetween records
+get_show_tables = SqlHelper.GetList("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME OFFSET 999 rows FETCH NEXT 1000 ROWS ONLY")
+Trace.Write(get_show_tables)
+
+
+#Get quote details
+quote = QuoteHelper.Get("1234") # Quote ID
+get_quote_tbl = quote.QuoteTable['Quote_Details']
+
+#Get Current Quote ID
+get_quote_id = context.Quote.Id
